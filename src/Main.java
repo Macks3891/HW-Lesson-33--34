@@ -6,7 +6,7 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-        // Создаем список животных
+
         List<Animal> animals = new ArrayList<>();
 
         // Добавляем в список собак, кошек и птиц
@@ -17,7 +17,7 @@ public class Main {
         animals.add(new Cat("Васька"));
         animals.add(new Bird("Клёпа", false));
 
-        // Проходим по списку и вызываем методы makeSound() и eat() для каждого животного
+
         for (Animal animal : animals) {
             System.out.println("Имя животного: " + animal.getName());
             animal.makeSound();
