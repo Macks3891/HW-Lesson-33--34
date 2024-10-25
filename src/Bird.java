@@ -5,9 +5,9 @@ public class Bird extends Animal {
     private boolean canFly;
 
     /**
-     * Конструктор для инициализации объекта.
+     * Конструктор для инициализации объекта Bird.
      *
-     * @param name   Имя птицы.
+     * @param name Имя птицы.
      * @param canFly Может ли птица летать.
      */
     public Bird(String name, boolean canFly) {
@@ -16,7 +16,7 @@ public class Bird extends Animal {
     }
 
     /**
-     * Переопределенный метод makeSound(), чтобы птица "чирикала".
+     * Переопределенный метод для издания звука птицы.
      */
     @Override
     public void makeSound() {
@@ -24,7 +24,20 @@ public class Bird extends Animal {
     }
 
     /**
-     * Переопределенный метод eat(), чтобы птица ела семена.
+     * Переопределенный метод для описания движения птицы.
+     * В зависимости от значения поля canFly выводит соответствующее сообщение.
+     */
+    @Override
+    public void move() {
+        if (canFly) {
+            System.out.println("Птица летит");
+        } else {
+            System.out.println("Птица ходит");
+        }
+    }
+
+    /**
+     * Переопределенный метод для описания процесса еды птицы.
      */
     @Override
     public void eat() {
@@ -34,7 +47,7 @@ public class Bird extends Animal {
     /**
      * Геттер для поля canFly.
      *
-     * @return true, если птица может летать, иначе false.
+     * @return Значение поля canFly.
      */
     public boolean canFly() {
         return canFly;
@@ -43,7 +56,7 @@ public class Bird extends Animal {
     /**
      * Сеттер для поля canFly.
      *
-     * @param canFly Новое значение, может ли птица летать.
+     * @param canFly Новое значение поля canFly.
      */
     public void setCanFly(boolean canFly) {
         this.canFly = canFly;

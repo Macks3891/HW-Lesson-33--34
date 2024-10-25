@@ -1,10 +1,9 @@
 /**
  * Класс, представляющий собаку, наследуется от класса Animal.
  */
-public class Dog extends Animal {
-
+public class Dog extends Animal implements Pet {
     /**
-     * Конструктор для инициализации объекта.
+     * Конструктор для инициализации объекта Dog.
      *
      * @param name Имя собаки.
      */
@@ -13,7 +12,7 @@ public class Dog extends Animal {
     }
 
     /**
-     * Переопределенный метод makeSound(), чтобы собака "лаяла".
+     * Переопределенный метод для издания звука собаки.
      */
     @Override
     public void makeSound() {
@@ -21,10 +20,34 @@ public class Dog extends Animal {
     }
 
     /**
-     * Переопределенный метод eat(), чтобы собака ела кость.
+     * Переопределенный метод для описания движения собаки.
+     */
+    @Override
+    public void move() {
+        System.out.println("Собака бежит");
+    }
+
+    /**
+     * Переопределенный метод для описания процесса еды собаки.
      */
     @Override
     public void eat() {
         System.out.println("Собака ест кость");
+    }
+
+    /**
+     * Реализация метода интерфейса Pet для игры с собакой.
+     */
+    @Override
+    public void play() {
+        System.out.println("Собака играет с мячом");
+    }
+
+    /**
+     * Реализация метода интерфейса Pet для демонстрации дружелюбного поведения собаки.
+     */
+    @Override
+    public void beFriendly() {
+        System.out.println("Собака виляет хвостом");
     }
 }
