@@ -2,14 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Главный класс, демонстрирующий использование иерархии классов животных.
+ * Главный класс иерархии классов Animal и использования полиморфизма.
  */
 public class Main {
+
     public static void main(String[] args) {
-        // Создаем список животных
         List<Animal> animals = new ArrayList<>();
 
-        // Добавляем в список собак, кошек и птиц
         animals.add(new Dog("Бобик"));
         animals.add(new Cat("Мурка"));
         animals.add(new Bird("Кеша", true));
@@ -17,11 +16,25 @@ public class Main {
         animals.add(new Cat("Васька"));
         animals.add(new Bird("Клёпа", false));
 
-        // Проходим по списку и вызываем методы makeSound() и eat() для каждого животного
+
         for (Animal animal : animals) {
-            System.out.println("Имя животного: " + animal.getName());
+            System.out.print(animal.getName() + " говорит: ");
             animal.makeSound();
+            System.out.print(animal.getName() + " ест: ");
             animal.eat();
+            System.out.print(animal.getName() + " двигается: ");
+            animal.move();
+
+            if (animal instanceof Pet) {
+                Pet pet = (Pet) animal;
+                System.out.print(animal.getName() + " играет: ");
+                pet.play();
+                System.out.print(animal.getName() + " дружелюбно: ");
+                pet.beFriendly();
+            } else {
+                System.out.println(animal.getName() + " не дружелюбно");
+            }
+
             System.out.println();
         }
     }
